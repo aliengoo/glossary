@@ -3,6 +3,6 @@
 import {AuthInitialState} from './_common/security/authActions';
 
 export default {
-  rootReducer: null,
+  router: null,
   auth: AuthInitialState
 };

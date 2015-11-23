@@ -1,6 +1,5 @@
 "use strict";
 
-import _ from 'lodash';
 import Immutable from 'immutable';
 import keymirror from 'keymirror';
 import {FetchStatus, invokeAsync} from '../api/restApi';
