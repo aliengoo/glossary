@@ -21,7 +21,7 @@ var importScssConfig = {
   ]
 };
 
-var webpackDevServerPort = 8081;
+var webpackDevServerPort = 9595;
 
 // The development server (the recommended option for development)
 gulp.task("default", ["webpack-dev-server"], function(){
