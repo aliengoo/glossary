@@ -13,29 +13,21 @@ export function validateElementInContainer(element, containerValidityState = Con
 
   element.checkValidity();
 
-  return containerValidityState.set(elementName, Immutable.Map(element.validity));
+  return containerValidityState.set(elementName, Immutable.fromJS(element.validity));
 }
 
 export function evaluateContainerValidity(containerValidityState = ContainerValidityState) {
 
   let isValid = true;
 
-  console.log(containerValidityState.toJS());
-
+  var usernameValidity = containerValidityState.get('username');
+  console.log("usernameValidity:", usernameValidity.get('valid'));
 
   for(let entry in containerValidityState.entries()) {
-    //console.log(entry);
-    const validity = entry[1];
-
-    if (Immutable.Map.isMap(validity)) {
-      console.info("validity is immutable");
-    } else {
-      console.info(validity);
-    }
-
-    if (isValid && validity && validity.get('valid') === false) {
-      isValid = false;
-    }
+    console.log(entry);
+    //if (isValid && validity && validity.get('valid') === false) {
+    //  isValid = false;
+    //}
   }
 
   return containerValidityState.set('$isValid', isValid);
